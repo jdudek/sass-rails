@@ -79,7 +79,7 @@ module Sass::Rails
       importer = self.importer(scope)
       options = sass_options_from_rails(scope)
       load_paths = (options[:load_paths] || []).dup
-      load_paths.unshift(importer)
+      load_paths << importer
       resolver = Resolver.new(scope)
       css_filename = resolver.source_path(scope.logical_path, 'css')
       options.merge(
